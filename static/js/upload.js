@@ -2,12 +2,13 @@ $(function(){
 	
 	var dropbox = $('#dropbox'),
 		message = $('.message', dropbox);
+	var modelType = $('input[name=modelType]').val();
 	
 	dropbox.filedrop({
 		paramname: 'file',
 		maxfiles: 10,
     	maxfilesize: 5,
-		url: '/upload',
+		url: '/upload/'+modelType,
 		uploadFinished:function(i,file,response){
 			//console.log(response);
 			//$.data(file).find('.carName_prediction').show();
